@@ -52,6 +52,9 @@ bool currentUserIsMe = NO;
     
     [self.navigationController setNavigationBarHidden:NO];
     
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 160;
+    
     if (self.user == nil) {
         self.user = [User fetchCurrentUserInManagedObjectContext:[NSManagedObjectContext MR_defaultContext]];
         currentUserIsMe = YES;
